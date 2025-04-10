@@ -1,0 +1,25 @@
+services:
+  resume-representor:
+    build:
+      context: resume-representor
+    ports:
+      - "${RESUME_REPRESENTOR_PORT:-3000}:3000"
+  resume-transporter:
+    build:
+      context: resume-transporter
+    ports:
+      - "${RESUME_TRANSPORTER_PORT:-8000}:8000"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:17.4-alpine
+    ports:
+      - "${RESUME_DB_PORT:-5432}:5432"
+    environment:
+      POSTGRES_PASSWORD: ${RESUME_DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
