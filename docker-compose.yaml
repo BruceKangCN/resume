@@ -19,7 +19,6 @@ services:
       POSTGRES_PASSWORD: ${RESUME_DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./migrations:/docker-entrypoint-initdb.d
 
 volumes:
   postgres_data:

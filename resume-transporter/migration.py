@@ -1,5 +1,12 @@
-from tortoise import Tortoise
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "tortoise-orm[asycnpg]",
+# ]
+# ///
+
 import asyncio
+from tortoise import Tortoise
 
 
 async def migrate():

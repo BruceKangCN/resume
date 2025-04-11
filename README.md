@@ -22,6 +22,14 @@ structure:
     $ docker compose up -d
     ```
 
+5. create tables in database by running migration script:
+
+    ```shell
+    $ docker exec resume_resume-transporter_1 python migration.py
+    ```
+
+6. add your data for representation to database
+
 ## Table Structure
 
 see `resume-transporter/resuse_transporter/models.py`
