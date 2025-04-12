@@ -30,6 +30,7 @@ structure:
 
 6. add your data for representation to database
 
-## Table Structure
+## Database Structure
 
-see `resume-transporter/resuse_transporter/models.py`
+- see `resume-transporter/resuse_transporter/README.md` for schema structures
+- see `resume-transporter/resuse_transporter/models.py` for table structures
