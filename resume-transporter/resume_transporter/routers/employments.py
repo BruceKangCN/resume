@@ -5,5 +5,5 @@ router = APIRouter()
 
 
 @router.get("/employments")
-async def get_employments(lang: str | None):
+async def get_employments(lang: str | None = None):
     return await Employment.all().using_db(get_conn(lang))

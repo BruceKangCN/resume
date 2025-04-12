@@ -22,7 +22,7 @@ structure:
     $ docker compose up -d
     ```
 
-5. create tables in database by running migration script:
+5. create tables in default database and schema by running migration script:
 
     ```shell
     $ docker exec resume_resume-transporter_1 python migration.py

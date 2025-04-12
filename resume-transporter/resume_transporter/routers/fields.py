@@ -5,5 +5,5 @@ router = APIRouter()
 
 
 @router.get("/fields")
-async def get_fields(lang: str | None):
+async def get_fields(lang: str | None = None):
     return await Field.all().using_db(get_conn(lang))
