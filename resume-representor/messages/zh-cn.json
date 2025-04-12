@@ -1,0 +1,6 @@
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "locale": "语言：",
+    "fields": "领域",
+    "empty": "暂无信息"
+}

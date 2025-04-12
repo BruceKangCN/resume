@@ -1,0 +1,6 @@
+{
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "locale": "locale: ",
+    "fields": "Fields",
+    "empty": "<empty>"
+}

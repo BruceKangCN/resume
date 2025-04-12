@@ -1,5 +1,5 @@
 connections:
-  default:
+  en:
     engine: tortoise.backends.asyncpg
     credentials:
       host: postgres
@@ -7,8 +7,17 @@ connections:
       user: postgres
       password: qwerty123
       database: postgres
-      schema: public
+      schema: en
+  zh-cn:
+    engine: tortoise.backends.asyncpg
+    credentials:
+      host: postgres
+      port: 5432
+      user: postgres
+      password: qwerty123
+      database: postgres
+      schema: zh_cn
 apps:
   resume-transporter:
     models: [resume_transporter.models]
-    default_connection: default
+    default_connection: en

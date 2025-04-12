@@ -1,5 +1,6 @@
+from enum import Enum
 from tortoise.models import Model
-from tortoise import fields
+from tortoise import fields, connections
 
 
 class Field(Model):
@@ -34,3 +35,16 @@ class Project(Model):
 
     class Meta:
         table = "projects"
+
+
+def get_conn(lang: str | None):
+    """
+    get a proper connection according to `lang`
+
+    returns `None` if `lang` is `None`.
+    """
+
+    if lang is None:
+        return None
+
+    return connections.get(lang)

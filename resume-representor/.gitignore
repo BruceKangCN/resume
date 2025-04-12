@@ -24,3 +24,6 @@ vite.config.ts.timestamp-*
 
 # Personal data
 static/avator.png
+
+# Paraglide
+src/lib/paraglide
