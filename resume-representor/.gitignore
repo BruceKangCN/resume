@@ -22,8 +22,9 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Personal data
-static/avator.png
-
 # Paraglide
 src/lib/paraglide
+
+# Personal data
+/static/avator.png
+/static/bio.json

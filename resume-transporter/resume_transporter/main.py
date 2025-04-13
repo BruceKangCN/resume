@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import RegisterTortoise, tortoise_exception_handlers
 
-from .routers import fields, employments, projects, bio
+from .routers import fields, employments, projects, resume
 
 
 @asynccontextmanager
@@ -21,4 +21,4 @@ app = FastAPI(
 app.include_router(fields.router)
 app.include_router(employments.router)
 app.include_router(projects.router)
-app.include_router(bio.router)
+app.include_router(resume.router)

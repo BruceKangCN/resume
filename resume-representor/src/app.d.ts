@@ -8,9 +8,12 @@ declare global {
         // interface PageState {}
         // interface Platform {}
 
+        // Note: JSON do not have `Date` type, so dates are represented as string
+
         interface Field {
             id: number;
             field_name: string;
+            position_desc: string;
             salary_desc: string;
             skill_desc: string;
         }
@@ -20,17 +23,28 @@ declare global {
             company_name: string;
             position: string;
             position_desc: string;
+            start_date: string;
+            end_date?: string;
         }
 
         interface Project {
             id: number;
             project_name: string;
             project_desc: string;
-            start_date: Date;
-            end_date: Date;
+            start_date: string;
+            end_date?: string;
         }
 
         interface Bio {
+            name: string;
+            birthday: string;
+            tel: string;
+            email: string;
+            addr: string;
+        }
+
+        interface Resume {
+            bio: Bio;
             field: Field;
             employments: Employment[];
             projects: Project[];

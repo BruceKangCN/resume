@@ -6,8 +6,9 @@ from tortoise import fields, connections
 class Field(Model):
     id = fields.IntField(primary_key=True)
     field_name = fields.TextField()
-    salary_desc = fields.TextField()
-    skill_desc = fields.TextField()
+    position_desc = fields.TextField()  # description for expected positions
+    salary_desc = fields.TextField()  # description for expected salary
+    skill_desc = fields.TextField()  # self introduction
 
     employments = fields.ManyToManyField("resume-transporter.Employment", related_name="employments")
     projects = fields.ManyToManyField("resume-transporter.Project", related_name="projects")
@@ -21,6 +22,8 @@ class Employment(Model):
     company_name = fields.TextField()
     position = fields.TextField()
     position_desc = fields.TextField()
+    start_date = fields.DateField()
+    end_date = fields.DateField(null=True)
 
     class Meta:
         table = "employments"
@@ -31,7 +34,7 @@ class Project(Model):
     project_name = fields.TextField()
     project_desc = fields.TextField()
     start_date = fields.DateField()
-    end_date = fields.DateField()
+    end_date = fields.DateField(null=True)
 
     class Meta:
         table = "projects"
