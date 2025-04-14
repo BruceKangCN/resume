@@ -1,4 +1,3 @@
-import { json } from "@sveltejs/kit";
 import { getLocale, type Locale } from "$lib/paraglide/runtime";
 import { PUBLIC_BACKEND_BASE_URL } from "$env/static/public";
 
@@ -18,5 +17,5 @@ export async function load({ params, fetch }) {
 
     const resume: App.Resume = { ...resumeWithoutBio, bio };
 
-    return json(resume);
+    return { resume };
 }
