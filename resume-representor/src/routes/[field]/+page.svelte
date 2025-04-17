@@ -7,8 +7,8 @@
     const resume = data.resume;
 </script>
 
-<!-- an A4 width page, using flex row layout -->
-<div class="w-[210mm] h-[297mm] flex flex-row p-8">
+<!-- an A4 width page, with 10mm padding, using flex row layout -->
+<div class="w-[190mm] h-[277mm] flex flex-row">
     <div class="basis-1/3 h-full">
         <SideBar bio={resume.bio} field={resume.field} />
     </div>

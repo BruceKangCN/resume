@@ -17,7 +17,7 @@
     const period = $derived(`${startStr}~${endStr}`);
 </script>
 
-<div class="border rounded-lg p-2 my-4">
+<div class="border rounded-lg p-2 my-4 break-inside-avoid">
     <div class="grid grid-cols-2 grid-rows-2">
         <p class="col-span-2"><span class="label">{m.projectNameLabel()}</span>{name}</p>
         <p><span class="label">{m.projectPeriodLabel()}</span>{period}</p>
