@@ -4,6 +4,8 @@ services:
       context: resume-representor
     ports:
       - "${RESUME_REPRESENTOR_PORT:-3000}:3000"
+    depends_on:
+      - resume-transporter
   resume-transporter:
     build:
       context: resume-transporter
