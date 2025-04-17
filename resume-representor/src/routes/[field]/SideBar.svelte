@@ -26,7 +26,7 @@
 
     <div class="w-full">
         <h3 class="title">{m.objectiveTitle()}</h3>
-        <p><span class="label">{m.positionLabel()}</span>{field.position_desc}</p>
+        <p><span class="label">{m.positionsLabel()}</span>{field.position_desc}</p>
         <p><span class="label">{m.salaryLabel()}</span>{field.salary_desc}</p>
     </div>
 

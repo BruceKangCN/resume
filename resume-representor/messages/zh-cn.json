@@ -10,6 +10,16 @@
     "birthdayLabel": "出生日期：",
     "addressLabel": "地址：",
     "objectiveTitle": "求职意向",
-    "positionLabel": "职位：",
-    "salaryLabel": "薪资："
+    "positionsLabel": "职位：",
+    "salaryLabel": "薪资：",
+    "introTitle": "自我评价",
+    "employmentsTitle": "工作经历",
+    "ProjectsTitle": "项目经验",
+    "companyLabel": "公司名称：",
+    "periodLabel": "在职时间：",
+    "positionLabel": "职位名称：",
+    "jobDescLabel": "工作描述：",
+    "projectNameLabel": "项目名称：",
+    "roleLabel": "项目职位：",
+    "projectPeriodLabel": "项目时间："
 }

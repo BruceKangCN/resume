@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { PageProps } from "./$types";
+    import MainContent from "./MainContent.svelte";
     import SideBar from "./SideBar.svelte";
 
     const { data }: PageProps = $props();
@@ -20,5 +21,6 @@
     <div class="flex basis-2/3">
         <!-- TODO: main content -->
         <!-- <pre class="overflow-scroll">{JSON.stringify(resume, null, 4)}</pre> -->
+        <MainContent intro={resume.field.skill_desc} {...resume} />
     </div>
 </div>
