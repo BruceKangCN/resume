@@ -2,5 +2,14 @@
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "locale": "locale: ",
     "fields": "Fields",
-    "empty": "<empty>"
+    "empty": "<empty>",
+    "bioTitle": "Bio",
+    "nameLabel": "Name: ",
+    "telLabel": "Tel: ",
+    "emailLabel": "Email: ",
+    "birthdayLabel": "Birthday: ",
+    "addressLabel": "Addr: ",
+    "objectiveTitle": "Objective",
+    "positionLabel": "Positions: ",
+    "salaryLabel": "Salary: "
 }

@@ -2,5 +2,14 @@
     "$schema": "https://inlang.com/schema/inlang-message-format",
     "locale": "语言：",
     "fields": "领域",
-    "empty": "暂无信息"
+    "empty": "暂无信息",
+    "bioTitle": "基本信息",
+    "nameLabel": "姓名：",
+    "telLabel": "电话：",
+    "emailLabel": "QQ/邮箱：",
+    "birthdayLabel": "出生日期：",
+    "addressLabel": "地址：",
+    "objectiveTitle": "求职意向",
+    "positionLabel": "职位：",
+    "salaryLabel": "薪资："
 }

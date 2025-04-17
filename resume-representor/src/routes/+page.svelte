@@ -23,7 +23,7 @@
     {#if fields.length > 0}
         <ul class="list">
             {#each fields as field (field.id)}
-                <li><a href="{field.field_name}">{field.field_name}</a></li>
+                <li><a href="{getLocale()}/{field.field_name}">{field.field_name}</a></li>
             {/each}
         </ul>
     {:else}
