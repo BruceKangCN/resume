@@ -17,7 +17,7 @@
     const period = $derived(`${startStr}~${endStr}`);
 </script>
 
-<div class="border rounded-lg p-2 my-4 break-inside-avoid">
+<div class="border rounded-lg p-2 break-inside-avoid">
     <div class="grid grid-cols-2 grid-rows-2">
         <p class="col-span-2"><span class="label">{m.projectNameLabel()}</span>{name}</p>
         <p><span class="label">{m.projectPeriodLabel()}</span>{period}</p>
@@ -27,7 +27,7 @@
 
     <div class="flex flex-col">
         {#each desc.split(/(\r?\n){2,}/) as p, i (i)}
-            <p>{p}</p>
+            <p class="indent-8">{p}</p>
         {/each}
     </div>
 </div>
