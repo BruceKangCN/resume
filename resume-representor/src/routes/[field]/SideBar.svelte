@@ -17,7 +17,7 @@
     </div>
 
     <div class="w-full grow flex flex-col items-center gap-24">
-        <div class="w-full">
+        <div class="block">
             <h3 class="title">{m.bioTitle()}</h3>
             <p><span class="label">{m.nameLabel()}</span>{bio.name}</p>
             <p><span class="label">{m.telLabel()}</span>{bio.tel}</p>
@@ -26,7 +26,7 @@
             <p><span class="label">{m.addressLabel()}</span>{bio.addr}</p>
         </div>
 
-        <div class="w-full">
+        <div class="block">
             <h3 class="title">{m.objectiveTitle()}</h3>
             <p><span class="label">{m.positionsLabel()}</span>{field.position_desc}</p>
             <p><span class="label">{m.salaryLabel()}</span>{field.salary_desc}</p>
@@ -48,7 +48,7 @@
         @apply flex;
         @apply flex-col;
         @apply gap-4;
-        @apply p-4;
+        /* @apply p-4; */
     }
 
     .avator {
@@ -56,6 +56,13 @@
         height: 45mm;
         @apply object-cover;
         @apply mx-auto;
+        @apply my-4;
+    }
+
+    .block {
+        @apply w-full;
+        @apply p-4;
+        @apply pt-0;
     }
 
     .title {

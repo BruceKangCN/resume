@@ -9,7 +9,7 @@
 
 <!-- an A4 sized (210mm x 297mm) page, with 10mm padding, using flex row layout -->
 <div class="w-[190mm] h-[277mm] flex flex-row">
-    <div class="basis-1/3 h-full">
+    <div class="basis-1/3 h-full mr-4">
         <SideBar bio={resume.bio} field={resume.field} />
     </div>
 
