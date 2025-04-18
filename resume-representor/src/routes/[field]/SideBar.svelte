@@ -48,7 +48,7 @@
         @apply flex;
         @apply flex-col;
         @apply gap-4;
-        /* @apply p-4; */
+        @apply shadow-lg;
     }
 
     .avator {
