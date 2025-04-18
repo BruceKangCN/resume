@@ -16,7 +16,7 @@
 <div class="w-full">
     <Title>{m.introTitle()}</Title>
 
-    <p class="p-2">{intro}</p>
+    <p class="p-2 text-sm tracking-wide">{intro}</p>
 
     <Title>{m.employmentsTitle()}</Title>
 
