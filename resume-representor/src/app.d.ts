@@ -40,7 +40,6 @@ declare global {
             birthday: string;
             tel: string;
             email: string;
-            addr: string;
         }
 
         interface Resume {

@@ -23,7 +23,6 @@
             <p><span class="label">{m.telLabel()}</span>{bio.tel}</p>
             <p><span class="label">{m.emailLabel()}</span>{bio.email}</p>
             <p><span class="label">{m.birthdayLabel()}</span>{bio.birthday}</p>
-            <p><span class="label">{m.addressLabel()}</span>{bio.addr}</p>
         </div>
 
         <div class="block">
