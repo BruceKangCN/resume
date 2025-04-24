@@ -2,35 +2,33 @@
 
 A web based resume representing app.
 
-structure:
-- `resume-representor`: a SvelteKit based front end
-- `resume-transporter`: a FastAPI based back end
-- database: PostgreSQL
-
 ## Usage
 
-1. in `resuse-transporter` directory, copy `db.example.yaml` to `db.yaml`.
-
-2. modify configurations in `db.yaml` if needed.
-
-3. set the value of `RESUME_DB_PASSWORD` environment variable to the value of
-`connections.default.credentials.password` field in `db.yaml`.
-
-4. run the app with docker compose:
+1. install dependencies
 
     ```shell
-    $ docker compose up -d
+    $ pnpm install
     ```
 
-5. create tables in default database and schema by running migration script:
+2. create `bio.toml` in `data/${locale}` directory.
+
+    > `bio.toml` must contains fields defined by `App.Bio` in `src/app.d.ts`.
+
+3. create `fields.toml`, `employments.toml` and `projects.toml` in the same directory.
+
+    > These files must contains a string keyed table. The value types are defined
+    > in `src/app.d.ts`:
+    >
+    > - `fields.toml`: `App.FieldDetail`, `employments` and `projects` are array
+    >   of keys in `employments` and `projects` tables. The order of values in
+    >   `employments` or `projects` arrays affects the display order in resume.
+    > - `employments.toml`: `App.EmploymentDetail`
+    > - `projects.toml`: `App.ProjectDetail`
+    >
+    > The keys are also used as key parameters in `{#each ...}` blocks.
+
+4. preview
 
     ```shell
-    $ docker exec resume_resume-transporter_1 python migration.py
+    $ pnpm preview
     ```
-
-6. add your data for representation to database
-
-## Database Structure
-
-- see `resume-transporter/resuse_transporter/README.md` for schema structures
-- see `resume-transporter/resuse_transporter/models.py` for table structures
