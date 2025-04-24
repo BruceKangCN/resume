@@ -1,3 +1,3 @@
 - [x] fix migration scripts
-- [ ] maybe use `drizzle` to fetch data directly?
 - [x] add `paraglide` for i18n
+- [ ] use file based data storage

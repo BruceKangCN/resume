@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { format } from "date-fns";
     import { m } from "$lib/paraglide/messages";
 
     interface Props {
@@ -7,6 +8,8 @@
     }
 
     const { bio, field }: Props = $props();
+
+    const birthday = $derived(format(bio.birthday, "yyyy-MM-dd"));
 </script>
 
 <!-- <div class="h-full w-full flex flex-col items-center p-4 gap-24"> -->
@@ -20,9 +23,9 @@
         <div class="block">
             <h3 class="title">{m.bioTitle()}</h3>
             <p><span class="label">{m.nameLabel()}</span>{bio.name}</p>
-            <p><span class="label">{m.telLabel()}</span>{bio.tel}</p>
+            <p><span class="label">{m.phoneLabel()}</span>{bio.phone}</p>
             <p><span class="label">{m.emailLabel()}</span>{bio.email}</p>
-            <p><span class="label">{m.birthdayLabel()}</span>{bio.birthday}</p>
+            <p><span class="label">{m.birthdayLabel()}</span>{birthday}</p>
         </div>
 
         <div class="block">

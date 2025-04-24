@@ -35,15 +35,45 @@ declare global {
             end_date?: string;
         }
 
+        interface FieldDetail {
+            positions: string[];
+            salary: string;
+            intro: string;
+            employments: string[],
+            projects: string[],
+        }
+
+        /**
+         * a type that replaces string based name array in `App.FieldDetail` with
+         * string-keyed records.
+         */
+        type FieldInfo = Omit<App.FieldDetail, "employments" | "projects"> & {
+            employments: Record<string, App.EmploymentDetail>;
+            projects: Record<string, App.ProjectDetail>;
+        };
+
+        interface EmploymentDetail {
+            company: string;
+            position: string;
+            job: string;
+            start: Date;
+            end?: Date;
+        }
+
+        interface ProjectDetail {
+            desc: string;
+            start: Date;
+            end?: Date;
+        }
+
         interface Bio {
             name: string;
-            birthday: string;
-            tel: string;
+            birthday: Date;
+            phone: string;
             email: string;
         }
 
         interface Resume {
-            bio: Bio;
             field: Field;
             employments: Employment[];
             projects: Project[];

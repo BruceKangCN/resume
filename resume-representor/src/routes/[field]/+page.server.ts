@@ -1,5 +1,6 @@
-import { getLocale, type Locale } from "$lib/paraglide/runtime";
+import { getLocale } from "$lib/paraglide/runtime";
 import { BACKEND_BASE_URL } from "$env/static/private";
+import { loadBio } from "$lib/server/util";
 
 // resume page should be non-intereactive
 export const csr = false;
@@ -9,13 +10,9 @@ export async function load({ params, fetch }) {
 
     const url = `${BACKEND_BASE_URL}/resume/${params.field}?lang=${lang}`;
     const resp = await fetch(url)
-    const resumeWithoutBio: Omit<App.Resume, "bio"> = await resp.json()
+    const { field, employments, projects }: App.Resume = await resp.json()
 
-    const bioResp = await fetch("/bio.json");
-    const bioDict: Record<Locale, App.Bio> = await bioResp.json()
-    const bio = bioDict[lang];
+    const bio = await loadBio(lang);
 
-    const resume: App.Resume = { ...resumeWithoutBio, bio };
-
-    return { resume };
+    return { bio, field, employments, projects };
 }

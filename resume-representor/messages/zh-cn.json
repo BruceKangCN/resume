@@ -5,7 +5,7 @@
     "empty": "暂无信息",
     "bioTitle": "基本信息",
     "nameLabel": "姓名：",
-    "telLabel": "电话：",
+    "phoneLabel": "电话：",
     "emailLabel": "QQ/邮箱：",
     "birthdayLabel": "出生日期：",
     "objectiveTitle": "求职意向",

@@ -4,8 +4,8 @@
 
     interface Props {
         company: string;
-        start: string;
-        end?: string;
+        start: Date | string;
+        end?: Date | string;
         position: string;
         desc: string;
     }

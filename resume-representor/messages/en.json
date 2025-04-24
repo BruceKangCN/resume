@@ -5,7 +5,7 @@
     "empty": "<empty>",
     "bioTitle": "Bio",
     "nameLabel": "Name: ",
-    "telLabel": "Tel: ",
+    "phoneLabel": "Phone: ",
     "emailLabel": "Email: ",
     "birthdayLabel": "Birthday: ",
     "objectiveTitle": "Objective",
