@@ -5,12 +5,11 @@
     import { m } from "$lib/paraglide/messages";
 
     interface Props {
-        intro: string;
-        employments: App.Employment[];
-        projects: App.Project[];
+        fieldInfo: App.FieldInfo;
     }
 
-    const { intro, employments, projects }: Props = $props();
+    const { fieldInfo }: Props = $props();
+    const { intro, employments, projects } = fieldInfo;
 </script>
 
 <div class="w-full">
@@ -21,13 +20,13 @@
     <Title>{m.employmentsTitle()}</Title>
 
     <div class="flex flex-col gap-4">
-        {#each employments as employment (employment.id)}
+        {#each Object.entries(employments) as [name, employment] (name)}
             <EmploymentCard
-                company={employment.company_name}
-                start={employment.start_date}
-                end={employment.end_date}
+                company={employment.company}
+                start={employment.start}
+                end={employment.end}
                 position={employment.position}
-                desc={employment.position_desc}
+                desc={employment.job}
             />
         {/each}
     </div>
@@ -35,12 +34,12 @@
     <Title>{m.ProjectsTitle()}</Title>
 
     <div class="flex flex-col gap-4">
-        {#each projects as project (project.id)}
+        {#each Object.entries(projects) as [name, project] (name)}
             <ProjectCard
-                name={project.project_name}
-                start={project.start_date}
-                end={project.end_date}
-                desc={project.project_desc}
+                {name}
+                start={project.start}
+                end={project.end}
+                desc={project.desc}
             />
         {/each}
     </div>

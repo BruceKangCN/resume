@@ -4,8 +4,8 @@
 
     interface Props {
         name: string;
-        start: Date | string;
-        end?: Date | string;
+        start: Date;
+        end?: Date;
         desc: string;
     }
 

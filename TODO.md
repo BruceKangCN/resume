@@ -1,3 +1,3 @@
 - [x] fix migration scripts
 - [x] add `paraglide` for i18n
-- [ ] use file based data storage
+- [x] use file based data storage

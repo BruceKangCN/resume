@@ -22,7 +22,7 @@
 
     {#if fields.length > 0}
         <ul class="list">
-            {#each fields as field, i (i)}
+            {#each fields as field (field)}
                 <li><a href="{lang}/{field}">{field}</a></li>
             {/each}
         </ul>

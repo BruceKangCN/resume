@@ -4,12 +4,14 @@
 
     interface Props {
         bio: App.Bio;
-        field: App.Field;
+        positions: string[];
+        salary: string;
     }
 
-    const { bio, field }: Props = $props();
+    const { bio, positions, salary }: Props = $props();
 
     const birthday = $derived(format(bio.birthday, "yyyy-MM-dd"));
+    const positionDesc = $derived(positions.join(" / "));
 </script>
 
 <!-- <div class="h-full w-full flex flex-col items-center p-4 gap-24"> -->
@@ -30,8 +32,8 @@
 
         <div class="block">
             <h3 class="title">{m.objectiveTitle()}</h3>
-            <p><span class="label">{m.positionsLabel()}</span>{field.position_desc}</p>
-            <p><span class="label">{m.salaryLabel()}</span>{field.salary_desc}</p>
+            <p><span class="label">{m.positionsLabel()}</span>{positionDesc}</p>
+            <p><span class="label">{m.salaryLabel()}</span>{salary}</p>
         </div>
 
         <!--
