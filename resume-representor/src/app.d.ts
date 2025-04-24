@@ -36,9 +36,9 @@ declare global {
         }
 
         interface FieldDetail {
+            intro: string;
             positions: string[];
             salary: string;
-            intro: string;
             employments: string[],
             projects: string[],
         }

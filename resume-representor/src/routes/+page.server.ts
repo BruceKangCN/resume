@@ -1,11 +1,9 @@
 import { getLocale } from "$lib/paraglide/runtime";
-import { BACKEND_BASE_URL } from "$env/static/private";
+import { getFieldNames } from "$lib/server/util.js";
 
-export const load = async ({ fetch }) => {
+export const load = async () => {
     const lang = getLocale();
-    const url = `${BACKEND_BASE_URL}/fields?lang=${lang}`;
-    const resp = await fetch(url);
-    const fields: App.Field[] = await resp.json();
+    const fields = await getFieldNames(lang);
 
     return { fields };
 }
