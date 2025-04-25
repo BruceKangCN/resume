@@ -1,6 +1,8 @@
 <script lang="ts">
     import { format } from "date-fns";
     import { m } from "$lib/paraglide/messages";
+    import Card from "./Card.svelte";
+    import Content from "./Content.svelte";
 
     interface Props {
         name: string;
@@ -17,25 +19,26 @@
     const period = $derived(`${startStr}~${endStr}`);
 </script>
 
-<div class="border rounded-lg p-2">
-    <div class="grid grid-cols-2 grid-rows-2 break-inside-avoid">
-        <p class="col-span-2"><span class="label">{m.projectNameLabel()}</span>{name}</p>
-        <p><span class="label">{m.projectPeriodLabel()}</span>{period}</p>
-    </div>
+<Card>
+    {#snippet header()}
+        <div class="grid grid-cols-2 grid-rows-2">
 
-    <hr>
+            <div class="cell col-span-2">
+                <span class="label">{m.projectNameLabel()}</span>
+                <span>{name}</span>
+            </div>
 
-    <div class="flex flex-col">
-        {#each desc.split(/(\r?\n){2,}/) as p, i (i)}
-            <p class="indent-8">{p}</p>
-        {/each}
-    </div>
-</div>
+            <div class="cell">
+                <span class="label">{m.projectPeriodLabel()}</span>
+                <span>{period}</span>
+            </div>
+
+        </div>
+    {/snippet}
+
+    <Content content={desc} />
+</Card>
 
 <style lang="postcss">
-    @reference "tailwindcss";
-
-    .label {
-        @apply font-bold;
-    }
+    @import "./style.css";
 </style>

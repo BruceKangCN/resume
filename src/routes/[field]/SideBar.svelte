@@ -67,6 +67,7 @@
         @apply w-full;
         @apply p-4;
         @apply pt-0;
+        @apply text-sky-800;
     }
 
     .title {
@@ -75,6 +76,7 @@
         @apply w-full;
         @apply text-center;
         @apply p-4;
+        @apply text-sky-500;
     }
 
     .label {
