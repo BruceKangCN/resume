@@ -7,7 +7,7 @@ A web based resume representing app.
 1. install dependencies
 
     ```shell
-    $ pnpm install
+    $ bun install
     ```
 
 2. create `bio.toml` in `data/${locale}` directory.
@@ -30,5 +30,6 @@ A web based resume representing app.
 4. preview
 
     ```shell
-    $ pnpm preview
+    $ bun run build
+    $ bun run preview
     ```
