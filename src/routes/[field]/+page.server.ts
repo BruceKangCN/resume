@@ -8,7 +8,7 @@ export async function load({ params }) {
     const lang = getLocale();
     const fieldName = params.field;
 
-    const fields = await loadFields(lang)
+    const fields = await loadFields(lang);
     const detail = fields[fieldName];
 
     const fieldInfo = await loadField(lang, detail);

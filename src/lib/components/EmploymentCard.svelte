@@ -16,14 +16,15 @@
 
     const dateFmt = "yyyy-MM";
     const startStr = $derived(format(start, dateFmt));
-    const endStr = $derived(end === undefined ? "       " : format(end, dateFmt));
+    const endStr = $derived(
+        end === undefined ? "       " : format(end, dateFmt),
+    );
     const period = $derived(`${startStr}~${endStr}`);
 </script>
 
 <Card>
     {#snippet header()}
         <div class="grid grid-cols-2 grid-rows-2 text-sm">
-
             <div class="cell col-span-2 text-base">
                 <span class="label">{m.companyLabel()}</span>
                 <span>{company}</span>
@@ -38,7 +39,6 @@
                 <span class="label">{m.positionLabel()}</span>
                 <span>{position}</span>
             </div>
-
         </div>
     {/snippet}
 

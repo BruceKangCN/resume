@@ -18,7 +18,7 @@ export default defineConfig({
                         ["en", "/en/:path(.*)?"],
                         ["zh-cn", "/zh-cn/:path(.*)?"],
                     ],
-                }
+                },
             ],
         }),
     ],

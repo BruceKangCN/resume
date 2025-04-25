@@ -12,8 +12,8 @@ declare global {
             intro: string;
             positions: string[];
             salary: string;
-            employments: string[],
-            projects: string[],
+            employments: string[];
+            projects: string[];
         }
 
         /**

@@ -6,4 +6,4 @@ export const load = async () => {
     const fields = await getFieldNames(lang);
 
     return { fields };
-}
+};

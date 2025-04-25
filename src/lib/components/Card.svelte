@@ -7,7 +7,7 @@
         {@render header()}
     </header>
 
-    <hr class="splitter">
+    <hr class="splitter" />
 
     <main>
         {@render children()}

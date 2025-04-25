@@ -2,10 +2,10 @@
     const { children = () => undefined } = $props();
 </script>
 
-<div class="w-full flex flex-row items-center">
-    <hr class="splitter">
+<div class="flex w-full flex-row items-center">
+    <hr class="splitter" />
     <h3 class="content">{@render children()}</h3>
-    <hr class="splitter">
+    <hr class="splitter" />
 </div>
 
 <style lang="postcss">

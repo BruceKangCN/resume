@@ -10,6 +10,6 @@ const handleParaglide: Handle = ({ event, resolve }) => {
                 html.replace("%paraglide.lang%", locale),
         });
     });
-}
+};
 
 export const handle: Handle = handleParaglide;

@@ -15,7 +15,9 @@ export async function loadBio(locale: Locale = getLocale()): Promise<App.Bio> {
 
 type EmploymentTable = Record<string, App.EmploymentDetail>;
 
-export async function loadEmployments(locale: Locale): Promise<EmploymentTable> {
+export async function loadEmployments(
+    locale: Locale,
+): Promise<EmploymentTable> {
     const doc = await readToString(`data/${locale}/employments.toml`);
     return parse(doc) as unknown as EmploymentTable;
 }
@@ -39,7 +41,10 @@ export async function getFieldNames(locale: Locale): Promise<string[]> {
     return Object.keys(fields);
 }
 
-export async function loadField(locale: Locale, detail: App.FieldDetail): Promise<App.FieldInfo> {
+export async function loadField(
+    locale: Locale,
+    detail: App.FieldDetail,
+): Promise<App.FieldInfo> {
     // load employment table to get details
     const employments: Record<string, App.EmploymentDetail> = {};
     const employmentTable = await loadEmployments(locale);

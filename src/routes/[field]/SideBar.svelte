@@ -18,10 +18,10 @@
 <div class="root">
     <div class="w-full">
         <!-- 2 inches sized photo -->
-        <img alt="avator" src="/avator.png" class="avator">
+        <img alt="avator" src="/avator.png" class="avator" />
     </div>
 
-    <div class="w-full grow flex flex-col items-center gap-24">
+    <div class="flex w-full grow flex-col items-center gap-24">
         <div class="block">
             <h3 class="title">{m.bioTitle()}</h3>
             <p><span class="label">{m.nameLabel()}</span>{bio.name}</p>
