@@ -1,10 +1,10 @@
 <script lang="ts">
-    const { children = () => undefined } = $props();
+    const { children } = $props();
 </script>
 
 <div class="flex w-full flex-row items-center">
     <hr class="splitter" />
-    <h3 class="content">{@render children()}</h3>
+    <h3 class="content">{@render children?.()}</h3>
     <hr class="splitter" />
 </div>
 

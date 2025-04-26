@@ -4,13 +4,13 @@
 
 <div class="root">
     <header class="break-inside-avoid">
-        {@render header()}
+        {@render header?.()}
     </header>
 
     <hr class="splitter" />
 
     <main>
-        {@render children()}
+        {@render children?.()}
     </main>
 </div>
 
