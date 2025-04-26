@@ -8,12 +8,14 @@ async function readToString(path: PathLike) {
     return buf.toString();
 }
 
-export async function loadBio(locale: Locale = getLocale()): Promise<App.Bio> {
+export async function loadBio(
+    locale: Locale = getLocale(),
+): Promise<Resume.Bio> {
     const doc = await readToString(`data/${locale}/bio.toml`);
-    return parse(doc) as unknown as App.Bio;
+    return parse(doc) as unknown as Resume.Bio;
 }
 
-type EmploymentTable = Record<string, App.EmploymentDetail>;
+type EmploymentTable = Record<string, Resume.EmploymentDetail>;
 
 export async function loadEmployments(
     locale: Locale,
@@ -22,14 +24,14 @@ export async function loadEmployments(
     return parse(doc) as unknown as EmploymentTable;
 }
 
-type ProjectTable = Record<string, App.ProjectDetail>;
+type ProjectTable = Record<string, Resume.ProjectDetail>;
 
 export async function loadProjects(locale: Locale): Promise<ProjectTable> {
     const doc = await readToString(`data/${locale}/projects.toml`);
     return parse(doc) as unknown as ProjectTable;
 }
 
-type FieldTable = Record<string, App.FieldDetail>;
+type FieldTable = Record<string, Resume.FieldDetail>;
 
 export async function loadFields(locale: Locale): Promise<FieldTable> {
     const doc = await readToString(`data/${locale}/fields.toml`);
@@ -43,17 +45,17 @@ export async function getFieldNames(locale: Locale): Promise<string[]> {
 
 export async function loadField(
     locale: Locale,
-    detail: App.FieldDetail,
-): Promise<App.FieldInfo> {
+    detail: Resume.FieldDetail,
+): Promise<Resume.FieldInfo> {
     // load employment table to get details
-    const employments: Record<string, App.EmploymentDetail> = {};
+    const employments: Record<string, Resume.EmploymentDetail> = {};
     const employmentTable = await loadEmployments(locale);
     for (const name of detail.employments) {
         employments[name] = employmentTable[name];
     }
 
     // load project table to get details
-    const projects: Record<string, App.ProjectDetail> = {};
+    const projects: Record<string, Resume.ProjectDetail> = {};
     const projectTable = await loadProjects(locale);
     for (const name of detail.projects) {
         projects[name] = projectTable[name];

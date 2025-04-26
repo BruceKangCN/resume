@@ -7,7 +7,9 @@ declare global {
         // interface PageData {}
         // interface PageState {}
         // interface Platform {}
+    }
 
+    namespace Resume {
         interface FieldDetail {
             intro: string;
             positions: string[];
@@ -20,9 +22,9 @@ declare global {
          * a type that replaces string based name array in `App.FieldDetail` with
          * string-keyed records.
          */
-        type FieldInfo = Omit<App.FieldDetail, "employments" | "projects"> & {
-            employments: Record<string, App.EmploymentDetail>;
-            projects: Record<string, App.ProjectDetail>;
+        type FieldInfo = Omit<FieldDetail, "employments" | "projects"> & {
+            employments: Record<string, EmploymentDetail>;
+            projects: Record<string, ProjectDetail>;
         };
 
         interface EmploymentDetail {

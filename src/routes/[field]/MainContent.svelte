@@ -5,7 +5,7 @@
     import { m } from "$lib/paraglide/messages";
 
     interface Props {
-        fieldInfo: App.FieldInfo;
+        fieldInfo: Resume.FieldInfo;
     }
 
     const { fieldInfo }: Props = $props();

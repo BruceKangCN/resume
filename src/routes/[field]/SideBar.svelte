@@ -3,7 +3,7 @@
     import { m } from "$lib/paraglide/messages";
 
     interface Props {
-        bio: App.Bio;
+        bio: Resume.Bio;
         positions: string[];
         salary: string;
     }
