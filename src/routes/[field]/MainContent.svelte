@@ -20,7 +20,7 @@
     <Title>{m.employmentsTitle()}</Title>
 
     <div class="flex flex-col gap-4">
-        {#each Object.entries(employments) as [name, employment] (name)}
+        {#each Object.entries(employments) as [key, employment] (key)}
             <EmploymentCard
                 company={employment.company}
                 start={employment.start}
@@ -34,9 +34,9 @@
     <Title>{m.ProjectsTitle()}</Title>
 
     <div class="flex flex-col gap-4">
-        {#each Object.entries(projects) as [name, project] (name)}
+        {#each Object.entries(projects) as [key, project] (key)}
             <ProjectCard
-                {name}
+                name={project.name}
                 start={project.start}
                 end={project.end}
                 desc={project.desc}

@@ -15,15 +15,15 @@
     <label for="locale-selector">{m.locale()}</label>
     <select id="locale-selector" bind:value={lang}>
         <option value="en">English</option>
-        <option value="zh-cn">简体中文</option>
+        <option value="zh-CN">简体中文</option>
     </select>
 
     <h2>{m.fields()}</h2>
 
-    {#if fields.length > 0}
+    {#if Object.keys(fields).length > 0}
         <ul class="list">
-            {#each fields as field (field)}
-                <li><a href="{lang}/{field}">{field}</a></li>
+            {#each Object.entries(fields) as [key, field] (key)}
+                <li><a href="{lang}/{key}">{field.name}</a></li>
             {/each}
         </ul>
     {:else}

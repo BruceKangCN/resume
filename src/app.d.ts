@@ -11,6 +11,7 @@ declare global {
 
     namespace Resume {
         interface FieldDetail {
+            name: string;
             intro: string;
             positions: string[];
             salary: string;
@@ -36,6 +37,7 @@ declare global {
         }
 
         interface ProjectDetail {
+            name: string;
             desc: string;
             start: Date;
             end?: Date;

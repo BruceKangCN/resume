@@ -38,11 +38,6 @@ export async function loadFields(locale: Locale): Promise<FieldTable> {
     return parse(doc) as unknown as FieldTable;
 }
 
-export async function getFieldNames(locale: Locale): Promise<string[]> {
-    const fields = await loadFields(locale);
-    return Object.keys(fields);
-}
-
 export async function loadField(
     locale: Locale,
     detail: Resume.FieldDetail,

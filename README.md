@@ -16,8 +16,7 @@ A web based resume representing app.
 
 3. create `fields.toml`, `employments.toml` and `projects.toml` in the same directory.
 
-    > These files must contains a string keyed table. The value types are defined
-    > in `src/app.d.ts`:
+    > These files must contains a table with field value type defined in `src/app.d.ts`:
     >
     > - `fields.toml`: `Resume.FieldDetail`, `employments` and `projects` are array
     >   of keys in `employments` and `projects` tables. The order of values in

@@ -25,18 +25,18 @@
 <Card>
     {#snippet header()}
         <div class="grid grid-cols-2 grid-rows-2 text-sm">
-            <div class="cell col-span-2 text-base">
-                <span class="label">{m.companyLabel()}</span>
+            <div class="resume-card-cell col-span-2 text-base">
+                <span class="resume-card-label">{m.companyLabel()}</span>
                 <span>{company}</span>
             </div>
 
-            <div class="cell">
-                <span class="label">{m.periodLabel()}</span>
+            <div class="resume-card-cell">
+                <span class="resume-card-label">{m.periodLabel()}</span>
                 <span>{period}</span>
             </div>
 
-            <div class="cell">
-                <span class="label">{m.positionLabel()}</span>
+            <div class="resume-card-cell">
+                <span class="resume-card-label">{m.positionLabel()}</span>
                 <span>{position}</span>
             </div>
         </div>
@@ -44,7 +44,3 @@
 
     <Content content={desc} />
 </Card>
-
-<style lang="postcss">
-    @import "./style.css";
-</style>

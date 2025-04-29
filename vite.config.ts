@@ -10,13 +10,13 @@ export default defineConfig({
         paraglideVitePlugin({
             project: "./project.inlang",
             outdir: "./src/lib/paraglide",
-            strategy: ["url", "baseLocale"],
+            strategy: ["url", "preferredLanguage", "baseLocale"],
             urlPatterns: [
                 {
                     pattern: "/:path(.*)?",
                     localized: [
                         ["en", "/en/:path(.*)?"],
-                        ["zh-cn", "/zh-cn/:path(.*)?"],
+                        ["zh-CN", "/zh-CN/:path(.*)?"],
                     ],
                 },
             ],
