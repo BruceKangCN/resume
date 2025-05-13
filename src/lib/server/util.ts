@@ -1,17 +1,13 @@
-import type { PathLike } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { parse } from "smol-toml";
 import { getLocale, type Locale } from "$lib/paraglide/runtime";
 
-async function readToString(path: PathLike) {
-    const buf = await readFile(path);
-    return buf.toString();
-}
-
 export async function loadBio(
     locale: Locale = getLocale(),
 ): Promise<Resume.Bio> {
-    const doc = await readToString(`data/${locale}/bio.toml`);
+    const doc = await readFile(`data/${locale}/bio.toml`, {
+        encoding: "utf-8",
+    });
     return parse(doc) as unknown as Resume.Bio;
 }
 
@@ -20,21 +16,27 @@ type EmploymentTable = Record<string, Resume.EmploymentDetail>;
 export async function loadEmployments(
     locale: Locale,
 ): Promise<EmploymentTable> {
-    const doc = await readToString(`data/${locale}/employments.toml`);
+    const doc = await readFile(`data/${locale}/employments.toml`, {
+        encoding: "utf-8",
+    });
     return parse(doc) as unknown as EmploymentTable;
 }
 
 type ProjectTable = Record<string, Resume.ProjectDetail>;
 
 export async function loadProjects(locale: Locale): Promise<ProjectTable> {
-    const doc = await readToString(`data/${locale}/projects.toml`);
+    const doc = await readFile(`data/${locale}/projects.toml`, {
+        encoding: "utf-8",
+    });
     return parse(doc) as unknown as ProjectTable;
 }
 
 type FieldTable = Record<string, Resume.FieldDetail>;
 
 export async function loadFields(locale: Locale): Promise<FieldTable> {
-    const doc = await readToString(`data/${locale}/fields.toml`);
+    const doc = await readFile(`data/${locale}/fields.toml`, {
+        encoding: "utf-8",
+    });
     return parse(doc) as unknown as FieldTable;
 }
 
