@@ -1,3 +1,6 @@
 - [x] fix migration scripts
 - [x] add `paraglide` for i18n
 - [x] use file based data storage
+- [ ] replace TailwindCSS with UnoCSS
+    - [ ] migrate to UnoCSS
+    - [ ] remove TailwindCSS files
