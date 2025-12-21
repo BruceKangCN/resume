@@ -1,6 +1,6 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages";
-    import { getLocale, setLocale } from "$lib/paraglide/runtime";
+    import { getLocale, setLocale, localizeHref } from "$lib/paraglide/runtime";
 
     const { data } = $props();
     const { fields } = data;
@@ -14,16 +14,36 @@
 <div class="m-4 mx-auto max-w-md p-2">
     <label for="locale-selector" class="label">{m.locale()}</label>
     <select id="locale-selector" bind:value={lang}>
-        <option value="en">English</option>
+        <option value="en-US">English</option>
         <option value="zh-CN">简体中文</option>
     </select>
 
     <h2 class="label">{m.fields()}</h2>
 
     {#if Object.keys(fields).length > 0}
-        <ul class="list">
+        <ul
+            class={[
+                "flex",
+                "flex-col",
+                "gap-2",
+                "p-2",
+            ]}
+        >
             {#each Object.entries(fields) as [key, field] (key)}
-                <li><a href="{lang}/{key}" class="item">{field.name}</a></li>
+                <li>
+                    <a
+                        href="{localizeHref(`/${key}`)}"
+                        class={[
+                            "block",
+                            "p-2",
+                            "border",
+                            "shadow-md",
+                            "hover:bg-zinc-200",
+                        ]}
+                    >
+                        {field.name}
+                    </a>
+                </li>
             {/each}
         </ul>
     {:else}
@@ -31,29 +51,8 @@
     {/if}
 </div>
 
-<style lang="postcss">
-    @reference "tailwindcss";
-
+<style>
     .label {
-        @apply font-bold;
-        @apply whitespace-pre;
-    }
-
-    .list {
-        @apply flex;
-        @apply flex-col;
-        @apply gap-2;
-        @apply p-2;
-
-        .item {
-            @apply block;
-            @apply p-2;
-            @apply border;
-            @apply shadow-md;
-
-            &:hover {
-                @apply bg-zinc-200;
-            }
-        }
+        --at-apply: font-bold whitespace-pre;
     }
 </style>

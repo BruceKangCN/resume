@@ -1,9 +1,6 @@
 import { getLocale } from "$lib/paraglide/runtime";
 import { loadBio, loadField, loadFields } from "$lib/server/util";
 
-// resume page should be non-intereactive
-export const csr = false;
-
 export async function load({ params }) {
     const lang = getLocale();
     const fieldName = params.field;

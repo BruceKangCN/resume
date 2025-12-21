@@ -15,7 +15,16 @@
 <div class="w-full">
     <Title>{m.introTitle()}</Title>
 
-    <p class="intro">{intro}</p>
+    <p
+        class={[
+            "p-2",
+            "text-sm",
+            "tracking-wide",
+            "text-slate-700",
+        ]}
+    >
+        {intro}
+    </p>
 
     <Title>{m.employmentsTitle()}</Title>
 
@@ -44,14 +53,3 @@
         {/each}
     </div>
 </div>
-
-<style lang="postcss">
-    @reference "tailwindcss";
-
-    .intro {
-        @apply p-2;
-        @apply text-sm;
-        @apply tracking-wide;
-        @apply text-slate-700;
-    }
-</style>

@@ -14,15 +14,34 @@
     const positionDesc = $derived(positions.join(" / "));
 </script>
 
-<!-- <div class="h-full w-full flex flex-col items-center p-4 gap-24"> -->
-<div class="root">
+<div
+    class={[
+        "h-full",
+        "w-full",
+        "flex",
+        "flex-col",
+        "gap-4",
+        "shadow-lg",
+    ]}
+>
     <div class="w-full">
         <!-- 2 inches sized photo -->
-        <img alt="avator" src="/avator.png" class="avator" />
+        <!-- svelte-ignore a11y_img_redundant_alt -->
+        <img
+            alt="photo"
+            src="/photo.png"
+            class={[
+                "w-[35mm]",
+                "h-[45mm]",
+                "object-cover",
+                "mx-auto",
+                "my-4",
+            ]}
+        />
     </div>
 
     <div class="flex w-full grow flex-col items-center gap-24">
-        <div class="block">
+        <div class="block-area">
             <h3 class="title">{m.bioTitle()}</h3>
             <p><span class="label">{m.nameLabel()}</span>{bio.name}</p>
             <p><span class="label">{m.phoneLabel()}</span>{bio.phone}</p>
@@ -30,7 +49,7 @@
             <p><span class="label">{m.birthdayLabel()}</span>{birthday}</p>
         </div>
 
-        <div class="block">
+        <div class="block-area">
             <h3 class="title">{m.objectiveTitle()}</h3>
             <p><span class="label">{m.positionsLabel()}</span>{positionDesc}</p>
             <p><span class="label">{m.salaryLabel()}</span>{salary}</p>
@@ -43,43 +62,19 @@
     </div>
 </div>
 
-<style lang="postcss">
-    @reference "tailwindcss";
-
-    .root {
-        @apply h-full;
-        @apply w-full;
-        @apply flex;
-        @apply flex-col;
-        @apply gap-4;
-        @apply shadow-lg;
-    }
-
-    .avator {
-        width: 35mm;
-        height: 45mm;
-        @apply object-cover;
-        @apply mx-auto;
-        @apply my-4;
-    }
-
-    .block {
-        @apply w-full;
-        @apply p-4;
-        @apply pt-0;
-        @apply text-sky-800;
+<style>
+    /* FIXME */
+    .block-area {
+        /* --at-apply: w-full p-4 pt-0 text-sky-800; */
+        --at-apply: w-full p-4 pt-0;
     }
 
     .title {
-        @apply text-2xl;
-        @apply font-bold;
-        @apply w-full;
-        @apply text-center;
-        @apply p-4;
-        @apply text-sky-500;
+        /* --at-apply: text-2xl font-bold w-full text-center text-sky-500; */
+        --at-apply: text-2xl font-bold w-full text-center;
     }
 
     .label {
-        @apply font-bold;
+        --at-apply: font-bold;
     }
 </style>

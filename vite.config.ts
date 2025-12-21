@@ -1,12 +1,11 @@
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
-import tailwindcss from "@tailwindcss/vite";
+import UnoCSS from "@unocss/svelte-scoped/vite";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
     plugins: [
-        tailwindcss(),
-        sveltekit(),
+        UnoCSS(),
         paraglideVitePlugin({
             project: "./project.inlang",
             outdir: "./src/lib/paraglide",
@@ -15,11 +14,12 @@ export default defineConfig({
                 {
                     pattern: "/:path(.*)?",
                     localized: [
-                        ["en", "/en/:path(.*)?"],
+                        ["en-US", "/en-US/:path(.*)?"],
                         ["zh-CN", "/zh-CN/:path(.*)?"],
                     ],
                 },
             ],
         }),
+        sveltekit(),
     ],
 });

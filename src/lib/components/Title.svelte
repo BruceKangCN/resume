@@ -4,23 +4,24 @@
 
 <div class="flex w-full flex-row items-center">
     <hr class="splitter" />
-    <h3 class="content">{@render children?.()}</h3>
+    <h3
+        class={[
+            "font-bold",
+            "text-3xl",
+            "m-4",
+            "tracking-wider",
+            "text-sky-600",
+        ]}
+    >
+        {@render children?.()}
+    </h3>
     <hr class="splitter" />
 </div>
 
-<style lang="postcss">
-    @reference "tailwindcss";
-
-    .content {
-        @apply font-bold;
-        @apply text-3xl;
-        @apply m-4;
-        @apply tracking-wider;
-        @apply text-sky-600;
-    }
-
+<style>
+    /* FIXME */
     .splitter {
-        @apply grow;
-        @apply text-sky-500;
+        /* --at-apply: grow text-sky-500; */
+        --at-apply: grow;
     }
 </style>
