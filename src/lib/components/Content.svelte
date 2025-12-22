@@ -1,4 +1,7 @@
-<!-- blank line splitted content -->
+<!--
+@component
+blank line splitted content
+-->
 
 <script lang="ts">
     interface Props {

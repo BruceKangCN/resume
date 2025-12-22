@@ -11,14 +11,14 @@
         desc: string;
     }
 
-    const { name, start, end, desc }: Props = $props();
+    let { name, start, end, desc }: Props = $props();
 
     const dateFmt = "yyyy-MM";
-    const startStr = $derived(format(start, dateFmt));
-    const endStr = $derived(
+    let startStr = $derived(format(start, dateFmt));
+    let endStr = $derived(
         end === undefined ? "       " : format(end, dateFmt),
     );
-    const period = $derived(`${startStr}~${endStr}`);
+    let period = $derived(`${startStr}~${endStr}`);
 </script>
 
 <Card>

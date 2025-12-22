@@ -1,27 +1,62 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages";
-    import { getLocale, setLocale, localizeHref } from "$lib/paraglide/runtime";
+    import { getLocale, setLocale, localizeHref, type Locale } from "$lib/paraglide/runtime";
 
-    const { data } = $props();
-    const { fields } = data;
+    let { data } = $props();
+    let { fields } = $derived(data);
 
-    let lang = $state(getLocale());
+    let locale = $state(getLocale());
     $effect(() => {
-        setLocale(lang);
+        setLocale(locale);
     });
+
+    interface LanguageOption {
+        lang: Locale;
+        desc: string;
+    };
+
+    const languages: LanguageOption[] = [
+        { lang: "en-US", desc: "English" },
+        { lang: "zh-CN", desc: "简体中文" },
+    ];
 </script>
 
 <div class="m-4 mx-auto max-w-md p-2">
-    <label for="locale-selector" class="label">{m.locale()}</label>
-    <select id="locale-selector" bind:value={lang}>
-        <option value="en-US">English</option>
-        <option value="zh-CN">简体中文</option>
-    </select>
+    <h2 class="label">{m.locale()}</h2>
+
+    <menu
+        class={[
+            "flex",
+            "flex-col",
+            "p-2",
+        ]}
+    >
+        {#each languages as { lang, desc } (lang)}
+            <li>
+                <label
+                    class={[
+                        "block",
+                        "w-full",
+                        "p-1",
+                        "hover:bg-zinc-200",
+                    ]}
+                >
+                    <input
+                        type="radio"
+                        name="lang"
+                        value={lang}
+                        bind:group={locale}
+                    >
+                    {desc}
+                </label>
+            </li>
+        {/each}
+    </menu>
 
     <h2 class="label">{m.fields()}</h2>
 
     {#if Object.keys(fields).length > 0}
-        <ul
+        <menu
             class={[
                 "flex",
                 "flex-col",
@@ -45,7 +80,7 @@
                     </a>
                 </li>
             {/each}
-        </ul>
+        </menu>
     {:else}
         <p class="mx-auto text-center">{m.empty()}</p>
     {/if}

@@ -8,10 +8,10 @@
         salary: string;
     }
 
-    const { bio, positions, salary }: Props = $props();
+    let { bio, positions, salary }: Props = $props();
 
-    const birthday = $derived(format(bio.birthday, "yyyy-MM-dd"));
-    const positionDesc = $derived(positions.join(" / "));
+    let birthday = $derived(format(bio.birthday, "yyyy-MM-dd"));
+    let positionDesc = $derived(positions.join(" / "));
 </script>
 
 <div

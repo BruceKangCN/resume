@@ -1,9 +1,19 @@
 <script lang="ts">
-    const { children } = $props();
+    import type { Snippet } from "svelte";
+
+    interface Props {
+        children: Snippet;
+    };
+
+    let { children }: Props = $props();
 </script>
 
+{#snippet splitter()}
+    <hr class="grow text-sky-500" />
+{/snippet}
+
 <div class="flex w-full flex-row items-center">
-    <hr class="splitter" />
+    {@render splitter()}
     <h3
         class={[
             "font-bold",
@@ -13,15 +23,7 @@
             "text-sky-600",
         ]}
     >
-        {@render children?.()}
+        {@render children()}
     </h3>
-    <hr class="splitter" />
+    {@render splitter()}
 </div>
-
-<style>
-    /* FIXME */
-    .splitter {
-        /* --at-apply: grow text-sky-500; */
-        --at-apply: grow;
-    }
-</style>

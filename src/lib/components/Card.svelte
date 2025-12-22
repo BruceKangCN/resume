@@ -1,5 +1,12 @@
 <script lang="ts">
-    const { children, header } = $props();
+    import type { Snippet } from "svelte";
+
+    interface Props {
+        children: Snippet;
+        header: Snippet;
+    }
+
+    let { children, header }: Props = $props();
 </script>
 
 <div
@@ -12,12 +19,12 @@
     ]}
 >
     <header class="break-inside-avoid">
-        {@render header?.()}
+        {@render header()}
     </header>
 
     <hr class="text-slate-500" />
 
     <main>
-        {@render children?.()}
+        {@render children()}
     </main>
 </div>

@@ -8,8 +8,8 @@
         fieldInfo: Resume.FieldInfo;
     }
 
-    const { fieldInfo }: Props = $props();
-    const { intro, employments, projects } = fieldInfo;
+    let { fieldInfo }: Props = $props();
+    let { intro, employments, projects } = $derived(fieldInfo);
 </script>
 
 <div class="w-full">

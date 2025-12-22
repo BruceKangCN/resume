@@ -3,8 +3,8 @@
     import MainContent from "./MainContent.svelte";
     import SideBar from "./SideBar.svelte";
 
-    const { data }: PageProps = $props();
-    const { bio, fieldInfo } = data;
+    let { data }: PageProps = $props();
+    let { bio, fieldInfo } = $derived(data);
 </script>
 
 <!-- an A4 sized (210mm x 297mm) page, with 10mm padding, using flex row layout -->
