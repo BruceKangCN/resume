@@ -1,30 +1,22 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
+  import type { Snippet } from "svelte";
 
-    interface Props {
-        children: Snippet;
-        header: Snippet;
-    }
+  interface Props {
+    children: Snippet;
+    header: Snippet;
+  }
 
-    let { children, header }: Props = $props();
+  let { children, header }: Props = $props();
 </script>
 
-<div
-    class={[
-        "border",
-        "border-slate-500",
-        "shadow-md",
-        "rounded-lg",
-        "p-2",
-    ]}
->
-    <header class="break-inside-avoid">
-        {@render header()}
-    </header>
+<div class="rounded-lg border border-slate-500 p-2 shadow-md">
+  <header class="break-inside-avoid">
+    {@render header()}
+  </header>
 
-    <hr class="text-slate-500" />
+  <hr class="text-slate-500" />
 
-    <main>
-        {@render children()}
-    </main>
+  <main>
+    {@render children()}
+  </main>
 </div>
