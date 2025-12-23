@@ -12,7 +12,7 @@ blank line splitted content
 </script>
 
 <div class="flex flex-col text-sm text-slate-700">
-  {#each content.split(/(\r?\n){2,}/) as p, i (i)}
+  {#each content.split(/([^\S\r\n](\r|\n|\r\n)){2,}/) as p, i (i)}
     <p class="indent-8">{p}</p>
   {/each}
 </div>
