@@ -14,7 +14,7 @@
     {@render header()}
   </header>
 
-  <hr class="text-slate-500" />
+  <hr class="my-2 text-slate-500" />
 
   <main>
     {@render children()}

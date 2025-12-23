@@ -27,7 +27,7 @@
 </script>
 
 <div class="m-4 mx-auto max-w-md p-2">
-  <h2 class="label">{m.locale()}</h2>
+  <h2 class="rsm-heading">{m.locale()}</h2>
 
   <menu class="flex flex-col p-2">
     {#each languages as { lang, desc } (lang)}
@@ -40,7 +40,7 @@
     {/each}
   </menu>
 
-  <h2 class="label">{m.fields()}</h2>
+  <h2 class="rsm-heading">{m.fields()}</h2>
 
   {#if Object.keys(fields).length > 0}
     <menu class="flex flex-col gap-2 p-2">
@@ -61,7 +61,7 @@
 </div>
 
 <style>
-  .label {
-    --at-apply: font-bold whitespace-pre;
+  .rsm-heading {
+    --at-apply: text-2xl font-bold;
   }
 </style>

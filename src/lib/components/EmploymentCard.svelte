@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { format } from "date-fns";
   import { m } from "$lib/paraglide/messages";
+  import { formatPeriod } from "$lib";
   import Card from "./Card.svelte";
   import Content from "./Content.svelte";
 
@@ -13,28 +13,23 @@
   }
 
   let { company, start, end, position, desc }: Props = $props();
-
-  const dateFmt = "yyyy-MM";
-  let startStr = $derived(format(start, dateFmt));
-  let endStr = $derived(end === undefined ? "       " : format(end, dateFmt));
-  let period = $derived(`${startStr}~${endStr}`);
 </script>
 
 <Card>
   {#snippet header()}
-    <div class="grid grid-cols-2 grid-rows-2 text-sm">
-      <div class="resume-card-cell col-span-2 text-base">
-        <span class="resume-card-label">{m.companyLabel()}</span>
+    <div class="grid grid-cols-2 grid-rows-2">
+      <div class="rsm-card-cell col-span-2">
+        <span class="rsm-card-label">{m.companyLabel()}</span>
         <span>{company}</span>
       </div>
 
-      <div class="resume-card-cell">
-        <span class="resume-card-label">{m.periodLabel()}</span>
-        <span>{period}</span>
+      <div class="rsm-card-cell">
+        <span class="rsm-card-label">{m.periodLabel()}</span>
+        <span>{formatPeriod(start, end)}</span>
       </div>
 
-      <div class="resume-card-cell">
-        <span class="resume-card-label">{m.positionLabel()}</span>
+      <div class="rsm-card-cell">
+        <span class="rsm-card-label">{m.positionLabel()}</span>
         <span>{position}</span>
       </div>
     </div>

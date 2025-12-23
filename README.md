@@ -18,11 +18,11 @@ A web based resume representing app.
 
    > These files must contains a table with field value type defined in `src/app.d.ts`:
    >
-   > - `fields.toml`: `Resume.FieldDetail`, `employments` and `projects` are array
+   > - `fields.toml`: `Resume.Field`, `employments` and `projects` are array
    >   of keys in `employments` and `projects` tables. The order of values in
    >   `employments` or `projects` arrays affects the display order in resume.
-   > - `employments.toml`: `Resume.EmploymentDetail`
-   > - `projects.toml`: `Resume.ProjectDetail`
+   > - `employments.toml`: `Resume.Employment`
+   > - `projects.toml`: `Resume.Project`
    >
    > The keys are also used as key parameters in `{#each ...}` blocks.
 

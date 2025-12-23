@@ -8,7 +8,7 @@ blank line splitted content
     content: string;
   }
 
-  const { content }: Props = $props();
+  let { content }: Props = $props();
 </script>
 
 <div class="flex flex-col text-sm text-slate-700">

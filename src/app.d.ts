@@ -10,7 +10,7 @@ declare global {
   }
 
   namespace Resume {
-    interface FieldDetail {
+    interface Field {
       name: string;
       intro: string;
       positions: string[];
@@ -19,16 +19,7 @@ declare global {
       projects: string[];
     }
 
-    /**
-     * a type that replaces string based name array in `App.FieldDetail` with
-     * string-keyed records.
-     */
-    type FieldInfo = Omit<FieldDetail, "employments" | "projects"> & {
-      employments: Record<string, EmploymentDetail>;
-      projects: Record<string, ProjectDetail>;
-    };
-
-    interface EmploymentDetail {
+    interface Employment {
       company: string;
       position: string;
       job: string;
@@ -36,7 +27,7 @@ declare global {
       end?: Date;
     }
 
-    interface ProjectDetail {
+    interface Project {
       name: string;
       desc: string;
       start: Date;
@@ -48,12 +39,6 @@ declare global {
       birthday: Date;
       phone: string;
       email: string;
-    }
-
-    interface Resume {
-      field: Field;
-      employments: Employment[];
-      projects: Project[];
     }
   }
 }
