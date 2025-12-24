@@ -4,8 +4,9 @@
 - [x] replace TailwindCSS with UnoCSS
   - [x] migrate to UnoCSS
   - [x] remove TailwindCSS files (but keep `prettier-plugin-tailwindcss` for UnoCSS)
-  - [ ] _UnoCSS has some compatibility issues with Svelte_, maybe wait for solution:
-    - [ ] cannot use color related utilities with:
+  - [x] _UnoCSS has some compatibility issues with Svelte_, maybe wait for solution:
+    - [x] ~~cannot use color related utilities with~~ color utilities not used
+          in `--at-apply` directives anymore:
 
       ```
       bun 1.3.5
@@ -16,3 +17,5 @@
       unocss 66.5.10
       @unocss/svelte-scoped 66.5.10
       ```
+
+- [ ] add some documentation

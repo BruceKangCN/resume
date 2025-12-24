@@ -1,5 +1,5 @@
 import { getLocale } from "$lib/paraglide/runtime";
-import { loadFields } from "$lib/server/util.js";
+import { loadFields } from "$lib/server";
 
 export const load = async () => {
   const lang = getLocale();

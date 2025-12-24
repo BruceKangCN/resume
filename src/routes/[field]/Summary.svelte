@@ -1,15 +1,16 @@
 <script lang="ts">
+  import { splitParagraphs } from "$lib";
   import { m } from "$lib/paraglide/messages";
   import { format } from "date-fns";
 
   interface Props {
     bio: Resume.Bio;
     intro: string;
-    position: string;
+    objective: string;
     salary: string;
   }
 
-  let { bio, intro, position, salary }: Props = $props();
+  let { bio, intro, objective, salary }: Props = $props();
   let { name, phone, email } = $derived(bio);
   let birthday = $derived(format(bio.birthday, "yyyy-MM-dd"));
 </script>
@@ -37,7 +38,7 @@
     <hr />
     <li>{@html m.resume_summary_emailField({ email })}</li>
     <hr />
-    <li>{@html m.resume_summary_positionField({ position })}</li>
+    <li>{@html m.resume_summary_objectiveField({ objective })}</li>
     <hr />
     <li>{@html m.resume_summary_salaryField({ salary })}</li>
   </ul>
@@ -46,4 +47,8 @@
   </figure>
 </div>
 
-<article class="p-2 indent-8">{intro}</article>
+<article class="flex flex-col gap-1 p-2">
+  {#each splitParagraphs(intro) as p, i (i)}
+    <p>{p}</p>
+  {/each}
+</article>

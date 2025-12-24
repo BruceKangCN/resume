@@ -1,5 +1,5 @@
 import { getLocale } from "$lib/paraglide/runtime";
-import { loadBio, loadExperiences, loadFields } from "$lib/server/util";
+import { loadBio, loadExperiences, loadFields } from "$lib/server";
 
 export async function load({ params }) {
   const lang = getLocale();

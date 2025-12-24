@@ -2,21 +2,34 @@
   import type { Snippet } from "svelte";
 
   interface Props {
-    children: Snippet;
-    header: Snippet;
+    children?: Snippet;
+    heading?: string;
+    aside?: Snippet;
   }
 
-  let { children, header }: Props = $props();
+  let { children, heading, aside }: Props = $props();
 </script>
 
-<div class="rounded-lg border border-slate-500 p-2 shadow-md">
-  <header class="break-inside-avoid">
-    {@render header()}
-  </header>
-
-  <hr class="my-2 text-slate-500" />
-
-  <main>
-    {@render children()}
-  </main>
+<div class="border">
+  <h3
+    class={[
+      "p-2",
+      "text-orange-500",
+      "text-lg",
+      "font-bold",
+      "bg-emerald-50",
+      "border-b",
+      "border-black",
+    ]}
+  >
+    {heading}
+  </h3>
+  <div class="flex flex-row">
+    <aside class="border-r p-2">
+      {@render aside?.()}
+    </aside>
+    <div class="flex-auto p-2">
+      {@render children?.()}
+    </div>
+  </div>
 </div>
