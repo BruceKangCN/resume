@@ -18,4 +18,4 @@
       @unocss/svelte-scoped 66.5.10
       ```
 
-- [ ] add some documentation
+- [x] add some documentation

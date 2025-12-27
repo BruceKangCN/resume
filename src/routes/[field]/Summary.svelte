@@ -1,3 +1,20 @@
+<!--
+@component
+
+A container to display summary information of applicant.
+
+## Props
+
+- `bio`: applicant's bio
+- `intro`: applicant's introduction
+- `objective`: job objective
+- `salary`: text description of expected salary
+
+## Assets
+
+- `/photo.png`: applicant's photo
+-->
+
 <script lang="ts">
   import { splitParagraphs } from "$lib";
   import { m } from "$lib/paraglide/messages";

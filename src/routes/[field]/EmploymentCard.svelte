@@ -1,3 +1,17 @@
+<!--
+@component
+
+A card based container to display employment information.
+
+## Props
+
+- `company`: company name
+- `start`: start date of job
+- `end?`: end date of job
+- `position`: job position
+- `desc`: job description
+-->
+
 <script lang="ts">
   import { m } from "$lib/paraglide/messages";
   import { formatDate, splitParagraphs } from "$lib";

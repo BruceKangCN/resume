@@ -1,3 +1,16 @@
+<!--
+@component
+
+A card based container to display project information.
+
+## Props
+
+- `name`: project name
+- `start`: start date of project
+- `end?`: end date of project
+- `desc`: project description
+-->
+
 <script lang="ts">
   import { m } from "$lib/paraglide/messages";
   import { formatDate, splitParagraphs } from "$lib";

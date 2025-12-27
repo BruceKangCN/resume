@@ -1,11 +1,10 @@
 <script lang="ts">
   import { m } from "$lib/paraglide/messages";
-  import type { PageProps } from "./$types";
   import Summary from "./Summary.svelte";
   import EmploymentCard from "./EmploymentCard.svelte";
   import ProjectCard from "./ProjectCard.svelte";
 
-  let { data }: PageProps = $props();
+  let { data } = $props();
   let { bio, field, employments, projects } = $derived(data);
 
   let objective = $derived(field.positions.join(" / "));
