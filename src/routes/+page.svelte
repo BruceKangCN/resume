@@ -46,12 +46,14 @@
     <menu class="flex flex-col gap-2 p-2">
       {#each Object.entries(fields) as [key, field] (key)}
         <li>
+          <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
             href={localizeHref(`/${key}`)}
             class="block border p-2 shadow-md hover:bg-zinc-200"
           >
             {field.name}
           </a>
+          <!-- eslint-enable svelte/no-navigation-without-resolve -->
         </li>
       {/each}
     </menu>
