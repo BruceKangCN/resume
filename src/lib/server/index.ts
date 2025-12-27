@@ -45,7 +45,10 @@ export interface Career {
   projects: ProjectTable;
 }
 
-export async function loadExperiences(
+/**
+ * load employments and projects corresponding to a specific field.
+ */
+export async function loadCareer(
   locale: Locale,
   field: Resume.Field,
 ): Promise<Career> {

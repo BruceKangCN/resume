@@ -1,26 +1,36 @@
 import { format } from "date-fns";
 
+/**
+ * format period from `start` to `end` as a string.
+ *
+ * @see formatDate
+ */
 export function formatPeriod(start: Date, end?: Date): string {
-  const fmt = "yyyy.M.d";
-
-  const startStr = format(start, fmt);
-  const endStr = end !== undefined ? format(end, fmt) : "";
+  const startStr = formatDate(start);
+  const endStr = formatDate(end);
 
   return `${startStr} - ${endStr}`;
 }
 
+/**
+ * format `date` as a string.
+ *
+ * format `date` in `yyyy/M/d` format if it exists. returns empty string if
+ * `date` is `undefined`.
+ */
 export function formatDate(date?: Date): string {
   if (date === undefined) {
     return "";
   }
-  return format(date, "yyyy.M.d");
+  return format(date, "yyyy/M/d");
 }
 
+/**
+ * split by 2 or more blank lines.
+ *
+ * a blank line is a line with only whitespace characters.
+ */
 export function splitParagraphs(content: string): string[] {
-  // split by 2 or more blank lines.
-  //
-  // A blank line is a line with only whitespace characters.
-  //
   // `\S\r\n` matches all non-whitespace characters plus `\r` and `\n`. `[^]`
   // matches all characters not in the list. `[^\S\r\n]*` matches all whitespace characters
   // except for `\r` and `\n`.

@@ -1,5 +1,5 @@
 import { getLocale } from "$lib/paraglide/runtime";
-import { loadBio, loadExperiences, loadFields } from "$lib/server";
+import { loadBio, loadCareer, loadFields } from "$lib/server";
 
 export async function load({ params }) {
   const lang = getLocale();
@@ -8,7 +8,7 @@ export async function load({ params }) {
   const fields = await loadFields(lang);
   const field = fields[fieldName];
 
-  const exp = await loadExperiences(lang, field);
+  const exp = await loadCareer(lang, field);
 
   const bio = await loadBio(lang);
 

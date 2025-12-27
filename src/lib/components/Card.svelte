@@ -1,3 +1,21 @@
+<!--
+@component
+
+A container to display information about something.
+
+A card has a heading on the top, a sidebar on the left and a content area on the
+right.
+
+## Snippets
+
+- `children`: content
+- `aside`: sidebar
+
+## props
+
+- `heading`: a heading text string
+-->
+
 <script lang="ts">
   import type { Snippet } from "svelte";
 
