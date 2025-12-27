@@ -10,16 +10,17 @@
   let { children, heading, aside }: Props = $props();
 </script>
 
-<div class="border">
+<div class="border shadow">
   <h3
     class={[
       "p-2",
-      "text-orange-500",
+      "text-sky-900",
       "text-lg",
       "font-bold",
-      "bg-emerald-50",
+      "bg-slate-200",
       "border-b",
       "border-black",
+      "text-shadow-xs",
     ]}
   >
     {heading}
